@@ -11,7 +11,7 @@ public class Login {
 
     @GetMapping("/login")
     public String login_Form() {
-        return "login_form";
+        return "login/login_form";
     }
 
     @PostMapping("/login")
@@ -22,6 +22,6 @@ public class Login {
         model.addAttribute("username", username);
         model.addAttribute("password", password);
 
-        return "login_result";
+        return "login/login_result";
     }
 }
