@@ -12,7 +12,7 @@ public class Sign_up {
     // 회원가입 폼 열기
     @GetMapping("/sign_up")
     public String SignUp_form() {
-        return "signup_form";
+        return "sign_up/signup_form";
     }
 
     // 회원가입 처리
@@ -28,6 +28,6 @@ public class Sign_up {
         model.addAttribute("email", email);
 
         // 결과 페이지로 이동
-        return "signup_result";
+        return "sign_up/signup_result";
     }
 }
