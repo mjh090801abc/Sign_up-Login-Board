@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>로그인 완료</title>
@@ -96,8 +96,13 @@
         <p>비밀번호: <span th:text="${password}"></span> </p>
     </div>
     <div class="btn-group">
-        <a href="/login" class="btn btn-logout">로그아웃</a>
-        <a href="/static" class="btn btn-ok">확인</a>
+        <!-- 로그아웃 버튼: Spring Security POST 로그아웃 -->
+        <form action="/logout" method="post" style="flex:1;">
+            <button type="submit" class="btn btn-logout">로그아웃</button>
+        </form>
+
+        <!-- 확인 버튼: 대시보드 이동 -->
+        <a href="/dashboard" class="btn btn-ok">확인</a>
     </div>
 </div>
 </body>
