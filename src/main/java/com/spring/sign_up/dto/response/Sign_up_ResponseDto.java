@@ -6,4 +6,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class Sign_up_ResponseDto {
+
+    private Long id;
+
+
 }
