@@ -9,5 +9,7 @@ public class Sign_up_ResponseDto {
 
     private Long id;
 
+    private String username;
+
 
 }
