@@ -11,5 +11,5 @@ public class Sign_up_ResponseDto {
 
     private String username;
 
-
+    private String password;
 }
