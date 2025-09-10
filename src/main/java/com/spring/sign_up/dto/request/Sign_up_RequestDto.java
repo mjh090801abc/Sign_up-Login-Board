@@ -7,4 +7,5 @@ import lombok.NoArgsConstructor;
 @Getter
 
 public class Sign_up_RequestDto {
+    private String username;
 }
