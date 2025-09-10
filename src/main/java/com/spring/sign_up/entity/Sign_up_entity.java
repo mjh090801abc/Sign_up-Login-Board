@@ -23,9 +23,5 @@ public class Sign_up_entity {
 
     private String email;
 
-    public Sign_up_entity(String username, String password, String email) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
     }
 }
