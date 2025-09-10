@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>대시보드</title>
+  <style>
+    /* --- 기본 설정 --- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* --- 카드 컨테이너 --- */
+    .dashboard-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+
+    /* --- 환영 텍스트 --- */
+    .dashboard-container h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .dashboard-container p {
+      margin-bottom: 30px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* --- 버튼 공통 --- */
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /* --- 버튼 색상 --- */
+    .btn-primary {
+      background: #2575fc;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #1a5ed8;
+    }
+
+    .btn-secondary {
+      background: #6a11cb;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background: #520da0;
+    }
+
+    .btn-danger {
+      background: #ff4757;
+      color: white;
+    }
+    .btn-danger:hover {
+      background: #e84118;
+    }
+  </style>
+</head>
+<body>
+<div class="dashboard-container">
+  <!-- 로그인한 사용자 이름 불러오기 -->
+  <h1 th:text="'환영합니다, ' + ${username} + '님 👋'">환영합니다, 사용자님 👋</h1>
+  <p>이곳에서 서비스를 자유롭게 이용하세요.</p>
+
+  <!-- 버튼들 -->
+  <form action="/mypage" method="get">
+    <button class="btn btn-primary">마이페이지</button>
+  </form>
+  <form action="/board" method="get">
+    <button class="btn btn-secondary">게시판</button>
+  </form>
+  <form action="/logout" method="post">
+    <button class="btn btn-danger">로그아웃</button>
+  </form>
+</div>
+</body>
+</html>
