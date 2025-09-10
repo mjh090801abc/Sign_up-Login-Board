@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity(name = "users") // DB 테이블 이름 정의
+@Entity(name = "users") // DB 테이블 이름 정의.
 public class Sign_up_entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
