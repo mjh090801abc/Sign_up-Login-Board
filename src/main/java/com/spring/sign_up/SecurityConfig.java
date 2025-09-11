@@ -15,7 +15,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().permitAll() // 모든 요청을 인증 없이 허용
                 )
-                .formLogin(form -> form.disable()); // 스프링 기본 로그인 폼 비활성화
+                .formLogin(form -> form.disable()); // 스프링 기본 로그인 폼 비활성화.
 
         return http.build();
     }
