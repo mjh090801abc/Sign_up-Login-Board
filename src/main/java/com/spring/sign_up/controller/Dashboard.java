@@ -3,6 +3,8 @@ package com.spring.sign_up.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Dashboard {
@@ -31,5 +33,19 @@ public class Dashboard {
         model.addAttribute("email", "test_email@example.com");
 
         return "mainPage/edit_information";
+    }
+
+    @PostMapping("/edit_information")
+    public String edit_information_change(@RequestParam String username,
+                                          @RequestParam String email,
+                                          @RequestParam String password,
+                                          Model model) {
+
+        model.addAttribute("username", username);
+        model.addAttribute("email", email);
+
+
+        return "mainPage/mypage";
+
     }
 }
