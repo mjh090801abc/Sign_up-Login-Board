@@ -35,6 +35,7 @@ public class Dashboard {
         return "mainPage/edit_information";
     }
 
+    // 정보 수정 (수정하기)
     @PostMapping("/edit_information")
     public String edit_information_change(@RequestParam String username,
                                           @RequestParam String email,
