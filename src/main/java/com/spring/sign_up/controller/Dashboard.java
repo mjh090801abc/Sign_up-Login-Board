@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class Dashboard {
-    // 마이페이지
+    // 메뉴 선택하는 대쉬보드
     @GetMapping("/dashboard")
     public String dashboard_Form() {
         return "mainPage/dashboard";
@@ -21,5 +21,15 @@ public class Dashboard {
         model.addAttribute("join_date", "2025-09-08");
 
         return "mainPage/mypage";
+    }
+
+    // 정보 수정 (폼 보여주기)
+    @GetMapping("/edit_information")
+    public String edit_information_Form(Model model) {
+
+        model.addAttribute("username", "test_username");
+        model.addAttribute("email", "test_email@example.com");
+
+        return "mainPage/edit_information";
     }
 }
