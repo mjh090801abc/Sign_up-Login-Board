@@ -45,6 +45,11 @@ public class Dashboard {
         model.addAttribute("username", username);
         model.addAttribute("email", email);
 
+        if (password != null && !password.isEmpty()) {
+            model.addAttribute("password", true);
+        } else {
+            model.addAttribute("password", false);
+        }
 
         return "mainPage/mypage";
 
