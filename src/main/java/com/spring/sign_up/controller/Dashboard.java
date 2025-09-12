@@ -51,6 +51,8 @@ public class Dashboard {
             model.addAttribute("password", false);
         }
 
+        model.addAttribute("join_date", "2025-09-08");
+
         return "mainPage/mypage";
 
     }
