@@ -8,21 +8,30 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: #fff;
+      /* 3색 파스텔톤 그라데이션 */
+      background: linear-gradient(135deg, #89f7fe, #66a6ff, #6a11cb);
+      background-size: 300% 300%; /* 부드러운 애니메이션 */
+      animation: gradientBG 12s ease infinite;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
 
+    /* 그라데이션 애니메이션 */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     /* --- 카드 컨테이너 --- */
     .dashboard-container {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       padding: 40px;
       border-radius: 20px;
       text-align: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       box-shadow: 0 8px 32px rgba(0,0,0,0.2);
       width: 400px;
     }
@@ -31,12 +40,14 @@
     .dashboard-container h1 {
       margin-bottom: 10px;
       font-size: 28px;
+      color: #fff;
     }
 
     .dashboard-container p {
       margin-bottom: 30px;
       font-size: 16px;
       opacity: 0.9;
+      color: #f1f1f1;
     }
 
     /* --- 버튼 공통 --- */
