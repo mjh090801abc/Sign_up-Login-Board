@@ -85,7 +85,7 @@ public class Dashboard {
             model.addAttribute("success", false);
         }
 
-        return "delete_member_Form";
+        return "mainPage/in_mypage/delete_member_process";
     }
     // }
 }
