@@ -72,6 +72,11 @@ public class Dashboard {
                                         @RequestParam String password,
                                         Model model) {
 
+        // DB 연결을 하지 않았으므로 임시로 값 입력
+        String saved_username = "test_username";
+        String saved_email = "test_email";
+        String saved_password = "test_password";
+
         return "delete_member_Form";
     }
     // }
