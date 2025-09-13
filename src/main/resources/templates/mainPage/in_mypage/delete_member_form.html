@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>회원 탈퇴</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff6a6a, #ff8e8e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            width: 400px;
+            text-align: center;
+        }
+        h2 { color: #e74c3c; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #e74c3c;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #c0392b;
+        }
+    </style>
 </head>
 <body>
-
+<div class="form-container">
+    <h2>회원 탈퇴</h2>
+    <form action="/delete_member" method="post">
+        <input type="text" name="username" placeholder="아이디 입력" required>
+        <input type="email" name="email" placeholder="이메일 입력" required>
+        <input type="password" name="password" placeholder="비밀번호 입력" required>
+        <button type="submit">탈퇴하기</button>
+    </form>
+</div>
 </body>
 </html>
