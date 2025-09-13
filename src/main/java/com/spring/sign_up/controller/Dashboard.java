@@ -14,6 +14,7 @@ public class Dashboard {
         return "mainPage/dashboard";
     }
 
+    // 마이페이지 + 기능 {
     // 마이페이지
     @GetMapping("/mypage")
     public String myPage_Form(Model model) {
@@ -32,7 +33,7 @@ public class Dashboard {
         model.addAttribute("username", "test_username");
         model.addAttribute("email", "test_email@example.com");
 
-        return "mainPage/edit_information";
+        return "mainPage/in_mypage/edit_information";
     }
 
     // 정보 수정 (수정하기)
@@ -56,4 +57,18 @@ public class Dashboard {
         return "mainPage/mypage";
 
     }
+
+    // 회원 탈퇴
+    @GetMapping("/delete_member")
+    public String delete_member_Form(@RequestParam String username,
+                                     @RequestParam String email,
+                                     @RequestParam String password,
+                                     Model model) {
+
+        return "mainPage/delete_member";
+
+    }
+
+
+    // }
 }
