@@ -58,17 +58,21 @@ public class Dashboard {
 
     }
 
-    // 회원 탈퇴
+    // 회원 탈퇴 (폼 보여주기)
     @GetMapping("/delete_member")
-    public String delete_member_Form(@RequestParam String username,
-                                     @RequestParam String email,
-                                     @RequestParam String password,
-                                     Model model) {
-
-        return "mainPage/delete_member";
+    public String delete_member_Form() {
+        return "mainPage/in_mypage/delete_member_form";
 
     }
 
+    // 회원 탈퇴 (탈퇴 처리)
+    @PostMapping("/delete_member")
+    public String delete_member_process(@RequestParam String username,
+                                        @RequestParam String email,
+                                        @RequestParam String password,
+                                        Model model) {
 
+        return "delete_member_Form";
+    }
     // }
 }
