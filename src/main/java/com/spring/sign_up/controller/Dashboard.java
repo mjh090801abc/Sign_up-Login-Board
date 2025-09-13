@@ -74,8 +74,12 @@ public class Dashboard {
 
         // DB 연결을 하지 않았으므로 임시로 값 입력
         String saved_username = "test_username";
-        String saved_email = "test_email";
-        String saved_password = "test_password";
+        String saved_email = "test_email@example.com";
+        String saved_password = "jh090801!!!";
+
+        if (username.equals(saved_username) && email.equals(saved_email) && password.equals(saved_password)) {
+
+        }
 
         return "delete_member_Form";
     }
