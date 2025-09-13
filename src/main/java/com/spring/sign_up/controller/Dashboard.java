@@ -78,7 +78,8 @@ public class Dashboard {
         String saved_password = "jh090801!!!";
 
         if (username.equals(saved_username) && email.equals(saved_email) && password.equals(saved_password)) {
-
+            model.addAttribute("success_message", "회원 탈퇴가 성공적으로 처리되었습니다.");
+            model.addAttribute("success", true);
         }
 
         return "delete_member_Form";
