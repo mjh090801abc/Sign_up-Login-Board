@@ -38,6 +38,7 @@ public class Board {
 
     }
 
+    // 글 삭제
     @PostMapping("/board/delete")
     public String delete_Post(@RequestParam int index) {
         if (index >= 0 && index < posts.size()) {
