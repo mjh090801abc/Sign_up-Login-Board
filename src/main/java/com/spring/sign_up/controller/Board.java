@@ -38,6 +38,14 @@ public class Board {
 
     }
 
+    @PostMapping("/board/delete")
+    public String delete_Post(@RequestParam int index) {
+        if (index >= 0 && index < posts.size()) {
+            posts.remove(index);
+        }
+        return "redirect:/board";
+    }
+
 }
 
 
