@@ -30,6 +30,7 @@ public class Board {
         return "mainPage/in_mypage/board/newPost";
     }
 
+    // 글 등록을 처리
     @PostMapping("/board/add")
     public String add_Post(@RequestParam String content) {
         posts.add(new Post(loggedInUser, content));
