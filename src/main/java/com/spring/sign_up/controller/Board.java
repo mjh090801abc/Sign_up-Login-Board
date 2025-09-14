@@ -3,6 +3,7 @@ package com.spring.sign_up.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,11 @@ public class Board {
         model.addAttribute("username", loggedInUser);
         return "mainPage/in_mypage/board/board";
 
+    }
+
+    @GetMapping("/board/new")
+    public String newPost_Form(Model model) {
+        return "mainPage/in_mypage/board/newPost";
     }
 }
 
