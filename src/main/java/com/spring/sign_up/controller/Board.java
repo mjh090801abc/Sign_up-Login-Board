@@ -16,6 +16,7 @@ public class Board {
     @GetMapping("/board")
     public String board(Model model) {
         model.addAttribute("posts", posts);
+        model.addAttribute("username", loggedInUser);
 
     }
 }
