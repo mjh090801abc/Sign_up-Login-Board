@@ -17,6 +17,7 @@ public class Board {
     public String board(Model model) {
         model.addAttribute("posts", posts);
         model.addAttribute("username", loggedInUser);
+        return "mainPage/in_mypage/board/board";
 
     }
 }
