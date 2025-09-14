@@ -13,6 +13,7 @@ public class Board {
     private List<Post> posts = new ArrayList<>();
     private String loggedInUser = "mjh090801abc";
 
+    // 메인 게시판
     @GetMapping("/board")
     public String board(Model model) {
         model.addAttribute("posts", posts);
