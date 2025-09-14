@@ -23,6 +23,7 @@ public class Board {
 
     }
 
+    // 글쓰기 폼
     @GetMapping("/board/new")
     public String newPost_Form(Model model) {
         return "mainPage/in_mypage/board/newPost";
