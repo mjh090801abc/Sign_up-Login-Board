@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Board {
 
     // 메인 게시판
     @GetMapping("/board")
-    public String board(Model model) {
+    public String main_board(Model model) {
         model.addAttribute("posts", posts);
         model.addAttribute("username", loggedInUser);
         return "mainPage/in_mypage/board/board";
@@ -28,6 +29,14 @@ public class Board {
     public String newPost_Form(Model model) {
         return "mainPage/in_mypage/board/newPost";
     }
+
+    @PostMapping("/board/add")
+    public String add_Post(@RequestParam String content) {
+        posts.add(new Post(loggedInUser, content));
+        return "redirect:/board";
+
+    }
+
 }
 
 
