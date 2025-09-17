@@ -1,5 +1,7 @@
 package com.spring.sign_up.controller;
 
+import com.spring.sign_up.entity.User;
+import com.spring.sign_up.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Sign_up {
-    
+
+    @Autowired
+    private UserService userService;
+
     // 회원가입 폼 열기
     @GetMapping("/sign_up")
     public String SignUp_form() {
@@ -23,10 +28,11 @@ public class Sign_up {
                                 @RequestParam String email,
                                 Model model) {
 
-        // 입력값을 모델에 담기
-        model.addAttribute("username", username); // @RequestParam 으로 사용자에게 받은 데이터를 보여주는 역할
-        model.addAttribute("password", password);
-        model.addAttribute("email", email);
+        // 새로운 user DB에 저장
+        User newUser = new User(username, password, email);
+
+        model.addAttribute("username", newUser.getUsername());
+        model.addAttribute("password", newUser.getPassword());
 
         // 결과 페이지로 이동
         return "sign_up/signup_result";
