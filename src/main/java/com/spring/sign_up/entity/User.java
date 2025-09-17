@@ -11,8 +11,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity(name = "users") // DB 테이블 이름 정의.
-public class Sign_up_entity {
+@Entity(name = "sign_up") // DB 테이블 이름 정의.
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -23,7 +23,7 @@ public class Sign_up_entity {
 
     private String email;
 
-    public Sign_up_entity(String username, String password, String email) {
+    public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
