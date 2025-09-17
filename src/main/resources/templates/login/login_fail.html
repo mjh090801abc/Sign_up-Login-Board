@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 실패</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .result-container {
+            background: #fff;
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 420px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .result-container h2 {
+            color: #e74c3c; /* 빨간색으로 실패 느낌 */
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            background: #f9f9f9;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: #333;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-back {
+            background: #3498db; /* 파란색으로 돌아가기 */
+        }
+        .btn-back:hover {
+            background: #2980b9;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+<div class="result-container">
+    <h2>로그인 실패 ❌</h2>
+    <div class="message">
+        <p th:text="${message}">아이디 또는 비밀번호가 잘못되었습니다.</p>
+    </div>
+    <div class="btn-group">
+        <!-- 다시 로그인 페이지로 이동 -->
+        <a href="/login" class="btn btn-back">다시 로그인</a>
+    </div>
+</div>
+</body>
+</html>
