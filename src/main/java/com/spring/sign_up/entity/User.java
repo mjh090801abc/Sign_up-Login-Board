@@ -8,7 +8,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity(name = "sign_up") // DB 테이블 이름 정의.
+@Entity(name = "users") // DB 테이블 이름 정의.
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
